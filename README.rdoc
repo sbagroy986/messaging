@@ -1,0 +1,4 @@
+== README
+
+This is an app built to allow in-app messaging service.
+
