@@ -48,6 +48,17 @@ class MessagingController < ApplicationController
     redirect_to inbox_path
   end
 
+  def permanent_delete_message
+    @user = User.find(params[:user])
+    @user.messages do |f|
+      if f.id == params[:id].to_i
+        @user.delete_message(f)
+        @user.save!
+      end
+    end
+    redirect_to trash_path
+  end
+
   def restore_message
     @user = User.find(params[:user])
     @user.deleted_messages.process do |f|

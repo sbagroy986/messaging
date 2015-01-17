@@ -38,11 +38,11 @@
                                     <div style="margin-top: 15px;">
                                         <ul class="nav nav-pills nav-stacked">
                                             <li class="header">Folders</li>
-                                            <li class=""><a href="./index"><i class="fa fa-inbox"></i>Inbox</a>
+                                            <li class=""><a href="../messaging/index"><i class="fa fa-inbox"></i>Inbox</a>
                                             </li>
-                                            <li><a href="./sent"><i class="fa fa-mail-forward"></i>Sent</a>
+                                            <li><a href="../messaging/sent"><i class="fa fa-mail-forward"></i>Sent</a>
                                             </li>
-                                            <li><a href="./trash"><i class="fa fa-folder"></i> Trash</a>
+                                            <li><a href="../messaging/trash"><i class="fa fa-folder"></i> Trash</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -81,18 +81,10 @@
                                                                         <span class="input-group-addon">BODY:</span> <p  class ="form-control"><%= message.body %></p>
                                                                     </div>
                                                                 </div>
-                                                                <div class="form-group">
-                                                                    <div class="btn btn-success btn-file">
-                                                                        <i class="fa fa-paperclip"></i> Attachment
-                                                                        <input type="file" name="attachment" />
-                                                                    </div>
-                                                                    <p class="help-block">Max. 32MB</p>
-                                                                </div>
-
                                                             </div>
                                                             <div class="modal-footer clearfix">
                                                                 <div class ="col-md-6 col-md-offset-4">
-                                                                <%= link_to "Discard", delete_message_path(:id => message.id,:user => message.received_messageable_id), :class => "btn btn-danger" %>
+                                                                <%= link_to "Delete", permanent_delete_message_path(:id => message.id,:user => message.received_messageable_id), :class => "btn btn-danger" %>
                                                             </div>
                                                             <div class ="col-md-2">
                                                                 <%= link_to "Restore", restore_message_path(:id => message.id,:user => message.received_messageable_id), :class => "btn btn-danger" %>

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'messaging/sent' => 'messaging#sent', :as => :sent
   get 'messaging/trash' => 'messaging#trash', :as => :trash
   get 'messaging/delete_message' => 'messaging#delete_message', :as => :delete_message
+  get 'messaging/permanent_delete_message' => 'messaging#permanent_delete_message', :as => :permanent_delete_message
   get 'messaging/restore_message' => 'messaging#restore_message', :as => :restore_message
   resources :users
 
