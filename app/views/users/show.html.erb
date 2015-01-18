@@ -9,5 +9,10 @@
   <strong>Email:</strong>
   <%= @user.email %>
 </p>
+
+<% @user.messages.each do |f| %>
+<%= f.topic %> |
+<%= f.seen %> <br/>
+<% end %>
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

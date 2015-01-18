@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150117083637) do
+ActiveRecord::Schema.define(version: 20150118090501) do
 
   create_table "messages", force: true do |t|
     t.string   "topic"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20150117083637) do
     t.string   "ancestry"
     t.boolean  "recipient_permanent_delete", default: false
     t.boolean  "sender_permanent_delete",    default: false
+    t.string   "seen"
   end
 
   add_index "messages", ["ancestry"], name: "index_messages_on_ancestry"
