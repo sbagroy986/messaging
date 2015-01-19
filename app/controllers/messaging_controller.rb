@@ -26,10 +26,20 @@ class MessagingController < ApplicationController
 
       if params[:to]
         @user1 = User.where(name: params[:from]).take
+        @a = params[:to].to_s.split(',')
         @user2 = User.where(name: params[:to]).take
         @user1.send_message(@user2, { :body => params[:body].to_s, :topic => params[:subject].to_s })
       end
 
+        mlist = Mailinglist.where(name: params[:mlist].to_s).take
+        if mlist != nil
+        user1 = User.where(name: params[:from].to_s).take
+        a = mlist.list.split(',')
+        a.each do |f|
+          user2 = User.where(name: f.to_s).take
+          user1.send_message(user2, { :body => params[:body].to_s, :topic => params[:subject].to_s })
+        end
+      end
 
 
     end
@@ -38,6 +48,9 @@ class MessagingController < ApplicationController
 
     def sent
       @user = User.all
+      test = User.find(1).messages.take(5)
+      puts "-----------"
+      puts test
       @user_ids = {}
       @user.each do |f|
         @user_ids[f.id.to_s] = f.name
@@ -82,6 +95,8 @@ class MessagingController < ApplicationController
       @user.sent_messages.process do |f|
         if f.id == params[:id].to_i
           f.delete
+          f = nil
+          f.save!
         end
       end
       redirect_to inbox_path

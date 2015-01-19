@@ -8,9 +8,6 @@
     <%= stylesheet_link_tag "//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" , media: 'all', 'data-turbolinks-track' => true %>
     <%= stylesheet_link_tag "//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css", media: 'all', 'data-turbolinks-track' => true %>
     <%= stylesheet_link_tag "//code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css", media: 'all', 'data-turbolinks-track' => true %>
-    <%= stylesheet_link_tag "bootstrap3-wysihtml5.min", media: 'all', 'data-turbolinks-track' => true %> 
-    <%= stylesheet_link_tag "blue", media: 'all', 'data-turbolinks-track' => true %> 
-    <%= stylesheet_link_tag "AdminLTE", media: 'all', 'data-turbolinks-track' => true %> 
 </head>
 
 <body class="skin-blue">
@@ -51,21 +48,16 @@
 
 
                                     <div class = "jrender" id="mlz">
-      </div>
+                                    </div>
                                     <div class="table-responsive" style="padding-top:42px;">
                                         <table class="table table-mailbox">
                                             <% @user.each do |y| %>
                                             <% y.received_messages.each do |message| %>
 
-
-
-
-
-
                                             <tr class="unread">
                                                 <td class="small-col">
                                                     <% if message.seen == "1" %>
-                                                        <p class="message-seen"></p>
+                                                    <p class="message-seen" ></p>
                                                     <% end %>
                                                 </td>
                                                 <td class="small-col"><i class="fa fa-star"></i>
@@ -105,8 +97,15 @@
                     <div class="form-group">
                         <div class="input-group">
                             <span class="input-group-addon">TO:</span>
-                            <%= text_field_tag :to, params[:to],:required => true , :class => "form-control" %>                            </div>
+                            <%= text_field_tag :to, params[:to], :class => "form-control" %>        
                         </div>
+                    </div>
+                      <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">MAILING-LIST:</span>
+                           <%= text_field_tag :mlist, params[:mlist], :class => "form-control" %>   
+                        </div>
+                    </div>
                         <div class="form-group">
                             <div class="input-group">
                                 <span class="input-group-addon">FROM:</span>
@@ -139,6 +138,7 @@
     </div>
 
     <p style="text-align:center;"> Click <%= link_to 'here', users_path, :style => "color:blue;" %> to manage users </p>
+    <p style="text-align:center;"> Click <%= link_to 'here', mailinglists_path, :style => "color:blue;" %> to manage mailing lists </p>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js" type="text/javascript"></script>
@@ -147,10 +147,6 @@
 
 
 
-    <script src="./app.js" type="text/javascript"></script>
-    <script src="./demo.js" type="text/javascript"></script>
-    <script src="./bootstrap3-wysihtml5.all.min.js" type="text/javascript"></script>
-    <script src="./icheck.min.js" type="text/javascript"></script>
 
     <script type="text/javascript">
 

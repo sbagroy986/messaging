@@ -24,7 +24,7 @@
                                                                         <span class="input-group-addon">BODY:</span> <p  class ="form-control"><%= @msg.body %></p>
                                                                     </div>
                                                                 </div>
-                                                            </div>
+                                                            </div>                                                           
                                                             <div class="modal-footer clearfix">
                                                                 <%= link_to "Discard", delete_message_path(:id => @msg.id,:user => @msg.received_messageable_id), :class => "btn btn-danger" %>
                                                             </div>

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :mailinglists
+
   get 'messaging/index' => 'messaging#index', :as => :inbox
   get 'messaging/sent' => 'messaging#sent', :as => :sent
   get 'messaging/trash' => 'messaging#trash', :as => :trash
