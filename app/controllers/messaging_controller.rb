@@ -48,9 +48,6 @@ class MessagingController < ApplicationController
 
     def sent
       @user = User.all
-      test = User.find(1).messages.take(5)
-      puts "-----------"
-      puts test
       @user_ids = {}
       @user.each do |f|
         @user_ids[f.id.to_s] = f.name
