@@ -17,6 +17,18 @@
  *= require_self
  */
 
+.link
+{
+	color:blue;
+}
+.link:hover{
+	color:none;
+	background-color: :none;
+}
+.link:visited{
+	color:none;
+}
+
  .message-seen {
 border-radius:10px;
 margin-left:10px;

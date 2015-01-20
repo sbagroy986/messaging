@@ -26,7 +26,7 @@
                                                                 </div>
                                                             </div>
                                                             <div class="modal-footer clearfix">
-                                                                <%= link_to "Delete", delete_message_path(:id => @msg.id,:user => @msg.received_messageable_id), :class => "btn btn-danger" %>
+                                                                <%= link_to "Delete", permanent_delete_message_path(:id => @msg.id,:user => @msg.received_messageable_id), :class => "btn btn-danger" %>
                                                                 <%= link_to "Restore", restore_message_path(:id => @msg.id,:user => @msg.received_messageable_id), :class => "btn btn-danger" %>
                                                             </div>
                                                         </form>

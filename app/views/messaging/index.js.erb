@@ -1,1 +1,1 @@
-$("<%= j render(:partial => 'messaging/mailmodal', :locals => { :msg => @msg })%>").modal('show');
+$("<%= j render(:partial => 'messaging/mailmodal', :locals => { :msg => @msg, :tagged => @tagged, :tagged_users => @tagged_users })%>").modal('show');
