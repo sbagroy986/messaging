@@ -31,9 +31,9 @@ class MessagingController < ApplicationController
             end
           end
         end
-        format.html
-        format.js
       end
+      format.html
+      format.js
     end
 
 
