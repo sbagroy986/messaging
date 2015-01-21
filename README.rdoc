@@ -2,3 +2,21 @@
 
 This is an app built to allow in-app messaging service.
 
+Setup and how-to-use:
+1. cd into the directory
+2. Install the gems by running bundle install
+3. Migrate the database and seed  (rake db:seed). This will create 3 seeded users (Shrey,Carlos and Chuck Norris) and one mailing-list (RLtournament - containing the users Shrey and Carlos).  
+4.Get the server running.
+6. Use the app to send mails to other users (using their exact names) or via mailing-lists (just type in the exact name of the mailing-list in the specified text-box). Users and mailing lists can be managed using the links at the bottom of each page. 
+6. A red circle before the *golden star* symbolizes the message has been read by the user (since there is no user auth, currently by any user).
+7. Any user names (exact names) if present in the body of a message, will appear in the 'Tagged' section.
+8. Mails deleted from the inbox can be restored, or permanently deleted in the Trash section.
+
+It is still under development and hence there may be issues which are not documented here. 
+Also, the code is not very DRY, as rails prefers it to be. 
+
+Known Problems:
+- Slight front-end uneveness
+- Absent 'Reply' feature
+- Deleting a message creates two copies, one of which cannot be permanently deleted
+

@@ -48,7 +48,7 @@
 
 
                                     <div class = "jrender" id="mlz">
-      </div>
+                                    </div>
                                     <div class="table-responsive" style="padding-top:42px;">
                                         <table class="table table-mailbox">
                                             <% @user.each do |y| %>
@@ -62,7 +62,7 @@
                                             <tr class="unread">
                                                 <td class="small-col">
                                                     <% if message.seen == "1" %>
-                                                        <p class="message-seen"></p>
+                                                    <p class="message-seen"></p>
                                                     <% end %>
                                                 </td>
                                                 <td class="small-col"><i class="fa fa-star"></i>
@@ -136,6 +136,8 @@
     </div>
 
     <p style="text-align:center;"> Click <%= link_to 'here', users_path, :style => "color:blue;" %> to manage users </p>
+    <p style="text-align:center;"> Click <%= link_to 'here', mailinglists_path, :style => "color:blue;" %> to manage mailing lists </p>
+
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js" type="text/javascript"></script>

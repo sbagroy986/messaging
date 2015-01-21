@@ -4,4 +4,12 @@
 # Examples:
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+#   Mayor.create(name: 'Emanuel', city: cities.first
+
+
+	User.delete_all
+	Mailinglist.delete_all
+	User.create(:name => "Shrey", :email => "shrey@gmail.com")
+	User.create(:name => "Carlos", :email => "carlos@gmail.com")
+	User.create(:name => "Chuck Norris", :email =>"chucknorris@gmail.com")
+	Mailinglist.create(:name => "RLtournament", :list =>"Shrey,Carlos")

@@ -13,27 +13,22 @@ class MessagingController < ApplicationController
         if params[:mid]
           users.received_messages.each do|f|
             if f.id.to_s == params[:mid].to_s
-                @msg = f
-                stripped = @msg.body.to_s.gsub(',',' ').gsub('?',' ').gsub('!',' ').gsub('  ',' ')
-                if stripped != nil
-                  body = stripped.split(' ')
-                  @tagged=[]
-                  @tagged_users=[]
-                  @user.each do |f|
-                    if body.include? f.name.to_s
-                      user = User.where(name: f.name).take
-                      @tagged_users << user
-                      @tagged << f.name
-                    end
+              @msg = f
+              @tagged=[]
+              @tagged_users=[]
+              @user.each do |f|
+                if @msg.body.to_s.include? f.name.to_s
+                  user = User.where(name: f.name).take
+                  @tagged_users << user
+                  @tagged << f.name
                 end
               end
-              logger.debug @msg.to_s
             end
           end
         end
-        format.html
-        format.js
       end
+      format.html
+      format.js
     end
 
 
@@ -98,13 +93,13 @@ class MessagingController < ApplicationController
     @user = User.find(params[:user])
     @users = User.all
     @users.each do |user|
-    user.sent_messages.process do |f|
-      if f.id == params[:id].to_i
-        f.delete
-        f.save!
+      user.sent_messages.process do |f|
+        if f.id == params[:id].to_i
+          f.delete
+          f.save!
+        end
       end
     end
-  end
     @user.messages.process do |f|
       if f.id == params[:id].to_i
         f.delete
