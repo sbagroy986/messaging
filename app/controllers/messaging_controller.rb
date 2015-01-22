@@ -14,6 +14,7 @@ class MessagingController < ApplicationController
           users.received_messages.each do|f|
             if f.id.to_s == params[:mid].to_s
               @msg = f
+              puts @msg.to_s
               @tagged=[]
               @tagged_users=[]
               @user.each do |f|
