@@ -18,5 +18,5 @@ Also, the code is not very DRY, as rails prefers it to be.
 Known Problems:
 - Slight front-end uneveness
 - Absent 'Reply' feature
-- Deleting a message creates two copies, one of which cannot be permanently deleted
+- Deleting a message creates two copies, one of which cannot be permanently deleted.
 
